@@ -1,0 +1,6 @@
+name: OrbStack
+runtime: nodejs
+description: cluster wide services
+config:
+  kubernetes:context: orbstack
+  kubernetes:namespace: default
