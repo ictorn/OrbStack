@@ -1,11 +1,11 @@
-import s3 from "./dev/s3"
+import minio from "./dev/minio"
 import debug from "./dev/debug"
 import {getStack} from "@pulumi/pulumi";
 
 const status: { [k: string]: object } = {};
 switch (getStack()) {
     case 'dev':
-        status.s3 = s3()
+        status.minio = minio()
         status.debug = debug()
         break;
     default:
