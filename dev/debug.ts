@@ -1,13 +1,13 @@
-import { Pod, Service, PersistentVolumeClaim } from "@pulumi/kubernetes/core/v1";
+import { Pod, Service } from "@pulumi/kubernetes/core/v1";
 import { Config } from "@pulumi/pulumi";
 
-const config = new Config
-const debug = config.requireObject<{
-    image: string
-    tag: string
-}>("debug");
-
 export default () => {
+    const config = new Config
+    const debug = config.requireObject<{
+        image: string
+        tag: string
+    }>("debug");
+
     const pod = new Pod('debug', {
         metadata: {
             name: "debug",

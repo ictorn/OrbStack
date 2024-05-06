@@ -3,13 +3,13 @@ import { Config } from "@pulumi/pulumi";
 import {execSync} from "child_process";
 import {readFileSync, unlinkSync} from "fs";
 
-const config = new Config
-const minio = config.requireObject<{
-    image: string
-    tag: string
-}>("minio");
-
 export default () => {
+    const config = new Config
+    const minio = config.requireObject<{
+        image: string
+        tag: string
+    }>("minio");
+
     const data: PersistentVolumeClaim = new PersistentVolumeClaim('minio', {
         metadata: {
             name: "minio",
