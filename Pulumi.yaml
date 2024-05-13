@@ -1,6 +1,8 @@
 name: OrbStack
 runtime: nodejs
 description: cluster wide services
+backend:
+  url: file://~
 config:
   kubernetes:context: orbstack
   kubernetes:namespace: default

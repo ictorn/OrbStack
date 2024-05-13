@@ -1,77 +1,58 @@
 import { Pod, Service } from "@pulumi/kubernetes/core/v1";
 import { Config } from "@pulumi/pulumi";
-
 export default () => {
     const config = new Config
-    const debug = config.requireObject<{
+    const mail = config.requireObject<{
         image: string
         tag: string
-    }>("debug");
+    }>("mail");
 
-    const pod = new Pod('debug', {
+    const pod: Pod = new Pod('mail', {
         metadata: {
-            name: "debug",
+            name: "mail",
             labels: {
-                "app.kubernetes.io/name": "debug",
-                "version": debug.tag
+                "app.kubernetes.io/name": "mail",
+                "version": mail.tag
             },
             annotations: {
-                "kubectl.kubernetes.io/default-container": "debug",
+                "kubectl.kubernetes.io/default-container": "mailhog",
                 "pulumi.com/patchForce": "true"
             }
         },
         spec: {
             os: { name: "linux" },
             containers: [{
-                name: "debug",
-                image: debug.image + ":" + debug.tag,
+                name: "mailhog",
+                image: mail.image + ":" + mail.tag,
                 imagePullPolicy: "IfNotPresent",
                 ports: [
                     {
                         name: "webui",
-                        containerPort: 8000
+                        containerPort: 8025
                     },
                     {
                         name: "smtp",
                         containerPort: 1025
-                    },
-                    {
-                        name: "var-dumper",
-                        containerPort: 9912
-                    },
-                    {
-                        name: "monolog",
-                        containerPort: 9913
                     }
                 ]
             }]
         }
     })
 
-    const service = new Service("debug", {
-        metadata: { name: "debug" },
+    const service: Service = new Service("mail", {
+        metadata: { name: "mail" },
         spec: {
-            selector: { "app.kubernetes.io/name": "debug" },
+            selector: { "app.kubernetes.io/name": "mail" },
             ports: [
                 {
                     name: "webui",
                     port: 80,
-                    targetPort: 8000
+                    targetPort: 8025
                 },
                 {
                     name: "smtp",
                     port: 25,
                     targetPort: 1025
-                },
-                {
-                    name: "var-dumper",
-                    port: 9912,
-                    targetPort: 9912
-                },
-                {
-                    name: "monolog",
-                    port: 514,
-                    targetPort: 9913
                 }
             ]
         }

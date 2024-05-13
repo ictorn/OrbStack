@@ -1,10 +1,8 @@
+encryptionsalt: v1:dYdpVcr737w=:v1:PMLjhIxNTTkJQVZx:uOq9acZAThbh18Pk8dxbSw3+cm8XGA==
 config:
-  s3:
-    image: "scireum/s3-ninja"
-    tag: "8.3.3"
+  mail:
+    image: mailhog/mailhog
+    tag: v1.0.1
   minio:
-    image: "minio/minio"
-    tag: "latest"
-  debug:
-    image: "ghcr.io/buggregator/server"
-    tag: "1.7.4"
+    image: minio/minio
+    tag: latest

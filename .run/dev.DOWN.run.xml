@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="dev.DOWN" type="ShConfigurationType" folderName="dev" activateToolWindowBeforeRun="false" focusToolWindowBeforeRun="true">
-    <option name="SCRIPT_TEXT" value="pulumi dn -s dev -y -f --suppress-outputs" />
+    <option name="SCRIPT_TEXT" value="PULUMI_CONFIG_PASSPHRASE= pulumi dn -s dev -y -f --suppress-outputs" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />
