@@ -1,8 +1,8 @@
 encryptionsalt: v1:dYdpVcr737w=:v1:PMLjhIxNTTkJQVZx:uOq9acZAThbh18Pk8dxbSw3+cm8XGA==
 config:
   mail:
-    image: mailhog/mailhog
-    tag: v1.0.1
+    image: axllent/mailpit
+    tag: v1.18.2
   minio:
     image: minio/minio
     tag: latest
