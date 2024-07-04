@@ -5,4 +5,4 @@ config:
     tag: v1.19.0
   minio:
     image: minio/minio
-    tag: RELEASE.2024-06-29T01-20-47Z
+    tag: RELEASE.2024-07-04T14-25-45Z
