@@ -2,7 +2,7 @@ encryptionsalt: v1:dYdpVcr737w=:v1:PMLjhIxNTTkJQVZx:uOq9acZAThbh18Pk8dxbSw3+cm8X
 config:
   mail:
     image: axllent/mailpit
-    tag: v1.19.0
+    tag: v1.19.1
   minio:
     image: minio/minio
-    tag: RELEASE.2024-07-10T18-41-49Z
+    tag: RELEASE.2024-07-13T01-46-15Z
