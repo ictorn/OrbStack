@@ -1,11 +1,11 @@
 {
 	"name": "nas",
 	"devDependencies": {
-		"@types/node": "^20.12"
+		"@types/node": "^20.14"
 	},
 	"dependencies": {
-		"@pulumi/kubernetes": "^4.11",
-		"@pulumi/pulumi": "^3.115",
-		"typescript": "^5.4"
+		"@pulumi/kubernetes": "^4.16",
+		"@pulumi/pulumi": "^3.129",
+		"typescript": "^5.5"
 	}
 }
