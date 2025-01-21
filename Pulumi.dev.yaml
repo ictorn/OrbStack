@@ -5,4 +5,4 @@ config:
     tag: v1.21.8
   minio:
     image: minio/minio
-    tag: RELEASE.2025-01-18T00-31-37Z
+    tag: Release RELEASE.2025-01-20T14-49-07Z
