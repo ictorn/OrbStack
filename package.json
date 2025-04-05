@@ -1,7 +1,7 @@
 {
-	"name": "nas",
+	"name": "orb",
 	"devDependencies": {
-		"@types/node": "^20.17.30"
+		"@types/node": "^22.14.0"
 	},
 	"dependencies": {
 		"@pulumi/kubernetes": "^4.22.1",
