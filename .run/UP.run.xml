@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="dev.UP" type="ShConfigurationType" folderName="dev" activateToolWindowBeforeRun="false" focusToolWindowBeforeRun="true">
-    <option name="SCRIPT_TEXT" value="PULUMI_CONFIG_PASSPHRASE= pulumi up -s dev -y -f --suppress-outputs" />
+  <configuration default="false" name="UP" type="ShConfigurationType" activateToolWindowBeforeRun="false" focusToolWindowBeforeRun="true">
+    <option name="SCRIPT_TEXT" value="PULUMI_CONFIG_PASSPHRASE= pulumi up -s orb -y -f --suppress-outputs" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />

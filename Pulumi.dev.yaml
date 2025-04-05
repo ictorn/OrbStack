@@ -1,8 +1,0 @@
-encryptionsalt: v1:dYdpVcr737w=:v1:PMLjhIxNTTkJQVZx:uOq9acZAThbh18Pk8dxbSw3+cm8XGA==
-config:
-  mail:
-    image: axllent/mailpit
-    tag: v1.23.2
-  minio:
-    image: minio/minio
-    tag: RELEASE.2025-04-03T14-56-28Z

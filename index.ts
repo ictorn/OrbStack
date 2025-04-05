@@ -1,15 +1,23 @@
-import minio from "./dev/minio"
-import mail from "./dev/mail"
-import {getStack} from "@pulumi/pulumi";
+import mail from "./services/mail"
+import minio from "./services/minio"
+import {Config} from "@pulumi/pulumi";
+import {Chart} from "@pulumi/kubernetes/helm/v3";
 
-const status: { [k: string]: object } = {};
-switch (getStack()) {
-    case 'dev':
-        status.minio = minio()
-        status.mail = mail()
-        break;
-    default:
-        throw new Error('invalid stack')
-}
+const config = new Config;
+const ingressConfig = config.requireObject<{
+    repo: string,
+    chart: string,
+    version: string
+}>("ingress");
 
-export {status}
+const ingress = new Chart("ingress-nginx", {
+    chart: ingressConfig.chart,
+    version: ingressConfig.version,
+    fetchOpts: { repo: ingressConfig.repo }
+});
+
+export default {
+    ingress: ingress.urn,
+    mail: mail(ingress),
+    minio: minio(ingress)
+};
