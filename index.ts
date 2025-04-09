@@ -1,5 +1,4 @@
 import mail from "./services/mail"
-import minio from "./services/minio"
 import {Config} from "@pulumi/pulumi";
 import {Chart} from "@pulumi/kubernetes/helm/v3";
 
@@ -18,6 +17,5 @@ const ingress = new Chart("ingress-nginx", {
 
 export default {
     ingress: ingress.urn,
-    mail: mail(ingress),
-    minio: minio(ingress)
+    mail: mail
 };
