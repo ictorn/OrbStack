@@ -6,4 +6,4 @@ config:
     version: "4.12.1"
   mail:
     image: "axllent/mailpit"
-    tag: "v1.23.2"
+    tag: "v1.24.1"

@@ -1,5 +1,5 @@
 import { Config } from "@pulumi/pulumi";
-import {Container, RemoteImage, RegistryImage, getRegistryImage} from "@pulumi/docker";
+import {Container, RemoteImage} from "@pulumi/docker";
 
 const config = new Config
 const mail = config.requireObject<{
