@@ -1,4 +1,3 @@
-import mail from "./services/mail"
 import {Config} from "@pulumi/pulumi";
 import {Chart} from "@pulumi/kubernetes/helm/v3";
 
@@ -16,6 +15,5 @@ const ingress = new Chart("ingress-nginx", {
 });
 
 export default {
-    ingress: ingress.urn,
-    mail: mail
+    ingress: ingress.urn
 };
